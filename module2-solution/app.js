@@ -34,10 +34,10 @@ angular.module('ShoppingListCheckOff',[])
         return buyItems;
       }
 
-      service.removeBuyItems = function(item){
+      service.removeBuyItems = function(index){
 
-        boughtItems.push(item);
-        buyItems.splice(buyItems.indexOf(item),1);
+        boughtItems.push(buyItems[index]);
+        buyItems.splice(index,1);
       }
       service.getBoughtItems = function(){
         return boughtItems;
