@@ -25,7 +25,8 @@ angular.module('ShoppingListCheckOff',[])
      var service = this;
       var buyItems = [
         {item_name: "cookies", item_quantity: 10},
-        {item_name: "Milk",item_quantity: 2}];
+        {item_name: "Milk",item_quantity: 2},
+         {item_name: "Chips",item_quantity: 10}];
 
       var boughtItems = [];
 
