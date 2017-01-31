@@ -11,15 +11,23 @@
   function NarrowItDownController(MenuSearchService){
     var narrow = this;
     narrow.narrowDown = function(searchTerm){
-      var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-      promise.then(function(response){
-        narrow.found = response;
+      narrow.message = "";
+      narrow.found = [];
+      if (searchTerm==undefined||searchTerm==''){
+          narrow.message = 'Nothing is found';
+      }
+      else{
+        var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+        promise.then(function(response){
+          narrow.found = response;
+        }).
+        catch(function(error){
+          console.log("Error occured!");
+          console.log(error);
+        });
 
-      }).
-      catch(function(error){
-        console.log("Error occured!");
-        console.log(error);
-      });
+      }
+
     }
     narrow.remove = function(index){
         narrow.found.splice(index, 1);

@@ -20,8 +20,10 @@
       </div>
         <!-- found-items should be implemented as a component -->
       <div class="row">
-        <h4 ng-if="narrow.found.length==0"> Nothing is found</h4>
         <found-items  found="narrow.found" on-remove="narrow.remove(index)" ></found-items>
+        <div class="form-group message">
+          <h4>{{narrow.message}}</h4>
+        </div>
       </div>
     </div>
 </body>
