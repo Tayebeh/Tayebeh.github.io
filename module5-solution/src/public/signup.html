@@ -39,7 +39,7 @@
           <label> Favorite Menu Number:
             <input type="text" ng-change="signup.validateMenuItem();"  name="menunumber" ng-model="signup.user.menunumber" class="form-control" placeholder="Favorite Menu Number" required/>
           </label>
-          <span ng-show="signup.isMenuValid" class="alert alert-danger" ng-if="reg.menunumber.$touched">
+          <span ng-show="!signup.isMenuValid" class="alert alert-danger" ng-if="reg.menunumber.$touched">
             {{signup.error}}
           </span>
         </div>
