@@ -1,0 +1,33 @@
+<div ng-show="info.user!=undefined" class="container" >
+  <h1>User details:</h1>
+  <div class="row">
+    <label>Firstname:
+      <label class="panel-body">{{info.user.firstname}}</label>
+    </label>
+  </div>
+  <div class="row">
+    <label>Lastname:
+      <label class="panel-body">{{info.user.lastname}}</label>
+    </label>
+  </div>
+  <div class="row">
+    <label>Email:
+      <label class="panel-body">{{info.user.email}}</label>
+    </label>
+  </div>
+  <div class="row">
+    <label>Phone Number:
+      <label class="panel-body">{{info.user.phone}}</label>
+    </label>
+  </div>
+  <div class="row">
+    <label >Favorite Menu Number:<br/>
+    <menu-item  menu-item="info.user.menuItem" class="panel-body"></menu-item>
+    </label>
+  </div>
+
+</div>
+<div class="container" ng-show="info.user==undefined">
+  Not Signed Up Yet.
+  <a ui-sref="public.signup">Sign up Now!</a>
+</div>
